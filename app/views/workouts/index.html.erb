@@ -1,21 +1,13 @@
-<div class="container">
-  <h1>Training Log</h1>
   <p>Have you worked out today?</p>
   <%= link_to 'Log A Workout', new_workout_path %></br>
 
 
-  <div class="row">
+  <div class="row" id="index-workouts">
     <% @workouts.each do |workout| %>
-      <div class="col-sm-6">
-      
-
-  <h2><%= link_to workout.date.strftime("%A %B %d"), workout %></h2>
-
-  <h3><%= workout.workout %></h3>
-
-        </div>
-      </div><br>
+      <div class="col-sm-12">
+        <h3><%= link_to workout.date.strftime("%A %B %d"), workout %></h3>
+        <p>Workout: <strong><%= workout.workout %></strong></p>
+      </div>
     <% end %>
-    </div>
-
-</div>
+  </div><br>
+    

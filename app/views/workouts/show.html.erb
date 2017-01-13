@@ -34,7 +34,7 @@
             <div id="exercises">
             <h3>Exercises</h3>
               <ol>
-              <% for exercise in @workout.exercises %>
+              <% @workout.exercises.each do | exercise | %>
                 <li>
                   <%= exercise.name %>
                 </li>
