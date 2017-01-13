@@ -8,21 +8,40 @@
         <table class="table">
           <tbody>
             <tr>
-              <td><h2><%= @workout.date %></h2></td>
+              <td><h2><%= @workout.date.strftime("%A %B %d") %></h2></td>
             </tr>
 
             <tr>
                <td><%= @workout.duration %></td>
             </tr>
 
+  <div class="row">
+    <% @workout.exercises.each do |exercise| %>
+      <div class="col-sm-6">
+      
+
+  <h2><%= exercise.name %></h2>
+  <h2><%= exercise.sets %></h2>
+  <h2><%= exercise.reps %></h2>
+
+
+
+        </div>
+      </div><br>
+    <% end %>
+    </div>
+
             <div id="exercises">
-              <h2>Exercises</h2>
-              <% render @workout.exercises %>
+            <h3>Exercises</h3>
+              <ol>
+              <% for exercise in @workout.exercises %>
+                <li>
+                  <%= exercise.name %>
+                </li>
+              <% end %>
+              </ol>
 
-              <h3>Add an exercise</h3>
-              <% render "exercises/form" %>
-            </div>
-
+              </div>
  
           </tbody>
         </table>

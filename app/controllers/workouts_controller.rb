@@ -7,11 +7,15 @@ class WorkoutsController < ApplicationController
 
   def new
     @workout = Workout.new
+    3.times do 
+      @workout.exercises.build
+    end
   end
 
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
+      flash[:notice] = "Successfully created workout."
       redirect_to @workout
     else
       render "new"
@@ -19,14 +23,15 @@ class WorkoutsController < ApplicationController
   end
 
   def show
-
+    #render json: @workout
   end
 
   def edit
   end
 
   def update
-    if @workout.update(workout_params)
+    if @workout.update_attributes(workout_params)
+      flash[:notice] = "Successfully updated workout."
       redirect_to @workout
     else
       render 'edit'
@@ -35,13 +40,14 @@ class WorkoutsController < ApplicationController
 
   def destroy
     @workout.destroy
+    flash[:notice] = "Successfully destroyed workout."
     redirect_to root_path
   end
 
   private
 
   def workout_params
-    params.require(:workout).permit(:date, :workout, :duration)
+    params.require(:workout).permit(:date, :workout, :duration, :exercises_attributes)
   end
 
   def find_workout

@@ -1,0 +1,10 @@
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name, placeholder: "Exercise" %><br>
+      <%= f.label :sets %><br>
+      <%= f.number_field :sets, placeholder: "Sets" %><br>
+      <%= f.label :reps %><br>
+      <%= f.number_field :reps, placeholder: "Reps" %><br>
+      <%= f.check_box :_destroy %>
+      <%= f.label :_destroy, "Remove Exercise" %>
+    </p>
