@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Training Log</h1>
-  <p>Have you worked out today?</p></br>
+  <p>Have you worked out today?</p>
+  <%= link_to 'Log A Workout', new_workout_path %></br>
+
 
   <div class="row">
     <% @workouts.each do |workout| %>
@@ -15,5 +17,5 @@
       </div><br>
     <% end %>
     </div>
-<%= link_to 'New Workout', new_workout_path %>
+
 </div>
