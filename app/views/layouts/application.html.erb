@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TrainingLog</title>
+    <title>Training Log</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,17 @@
   </head>
 
   <body>
+
+  <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to "Training Log", root_path, class: "navbar-brand" %>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
     <%= yield %>
+    </div>
   </body>
 </html>
