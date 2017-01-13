@@ -1,0 +1,33 @@
+<%= form_for @workout, html: { multipart: true } do |f| %>
+  <% if @workout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workout.errors.count, "error") %> prohibited this workout from being saved:</h2>
+
+      <ul>
+      <% @workout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_field :date, placeholder: "Date of Training" %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :workout %><br>
+    <%= f.text_field :workout, placeholder: "What Kind of Training?" %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration, placeholder: "Duration of Workout" %>
+  </div><br>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

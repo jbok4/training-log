@@ -1,0 +1,25 @@
+<h1>Training Log</h1>
+<p>Have you worked out today?</p>
+
+<div class="row">
+  <% @workouts.each do |workout| %>
+    <div class="col-sm-4 col-md-3">
+    
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><strong>Date:</strong></td>
+              <td><%= workout.date %></td>
+            </tr>
+
+            <tr>
+              <td><strong>Type:</strong></td>
+              <td><%= workout.workout %></td>
+            </tr>
+ 
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
