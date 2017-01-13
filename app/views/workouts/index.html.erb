@@ -1,25 +1,19 @@
-<h1>Training Log</h1>
-<p>Have you worked out today?</p>
+<div class="container">
+  <h1>Training Log</h1>
+  <p>Have you worked out today?</p></br>
 
-<div class="row">
-  <% @workouts.each do |workout| %>
-    <div class="col-sm-4 col-md-3">
-    
-      <div class="table-responsive">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td><strong>Date:</strong></td>
-              <td><%= workout.date %></td>
-            </tr>
+  <div class="row">
+    <% @workouts.each do |workout| %>
+      <div class="col-sm-6">
+      
 
-            <tr>
-              <td><strong>Type:</strong></td>
-              <td><%= workout.workout %></td>
-            </tr>
- 
-          </tbody>
-        </table>
-      </div>
+  <h2><%= link_to workout.date, workout %></h2>
+
+  <h3><%= workout.workout %></h3>
+
+        </div>
+      </div><br>
+    <% end %>
     </div>
-  <% end %>
+<%= link_to 'New Workout', new_workout_path %>
+</div>
